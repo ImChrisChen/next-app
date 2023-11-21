@@ -12,6 +12,7 @@ export default function Home() {
         // 执行你的代码
         if (isTauriApp()) {
           event.preventDefault()
+          // @ts-ignore
           const href = event.target?.href
           open(href,'chrome')
         }
