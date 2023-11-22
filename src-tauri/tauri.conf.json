@@ -13,7 +13,19 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "all": true,
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["http://**","https://**"]
+      },
+      "fs": {
+        "all": true,
+        "scope": [
+          "$DOWNLOAD/*",
+          "$HOME/*"
+        ]
+      }
     },
     "bundle": {
       "active": true,

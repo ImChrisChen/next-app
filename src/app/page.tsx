@@ -3,9 +3,29 @@ import Image from 'next/image'
 import { useEffect } from "react";
 import { open } from '@tauri-apps/api/shell'
 import { isTauriApp } from "@/utils";
+import { readDir, readTextFile } from '@tauri-apps/api/fs'
+import { http } from "@tauri-apps/api";
+import { sendNotification } from "@tauri-apps/api/notification";
 
 export default function Home() {
+  const handleSendNotification = () => {
+    sendNotification({ title: 'TAURI', body: 'Tauri is awesome!' })
+  }
   useEffect(() => {
+    http.getClient().then(client => {
+      client.get('https://httpbin.org/get').then(res => {
+        console.log(res)
+      })
+    })
+    readTextFile('/Users/chrisorz/Downloads/latest.json').then(res => {
+      console.log(res)
+    })
+    readDir('/Users/chrisorz/temp', {
+      recursive: true,
+    }).then(res => {
+      console.log(res)
+    })
+
     document.addEventListener("click", function(event) {
       // @ts-ignore
       if (event.target.tagName === "A") {
@@ -22,6 +42,7 @@ export default function Home() {
 
   return (
     <main data-tauri-drag-region className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div onClick={handleSendNotification}> 发送通知</div>
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
