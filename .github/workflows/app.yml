@@ -2,41 +2,41 @@ name: App Release
 on:
   push:
     tags: [ 'v*' ]
-    branches: ['develop']
+#    branches: ['develop']
 jobs:
-  update-app-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      # 更新版本号
-      - name: update package version
-        run: |
-          git config --global user.email "imchrisorz@gmail.com"
-          git config --global user.name "github-actions[bot]"
-          npm version patch
-
-      # 获取版本号
-      - name: get version
-        run: echo "PACKAGE_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
-
-      # 推送代码
-      - uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          amend: true
-          force: true
-          empty: true
-          message: 'chore(ci/cd): Update version:${{ env.PACKAGE_VERSION }}'
-          branch: ${{ github.ref_name }}
-
+#  update-app-version:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#        with:
+#          persist-credentials: false
+#      - uses: actions/setup-node@v4
+#        with:
+#          node-version: 18
+#
+#      # 更新版本号
+#      - name: update package version
+#        run: |
+#          git config --global user.email "imchrisorz@gmail.com"
+#          git config --global user.name "github-actions[bot]"
+#          npm version patch
+#
+#      # 获取版本号
+#      - name: get version
+#        run: echo "PACKAGE_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+#
+#      # 推送代码
+#      - uses: actions-js/push@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          amend: true
+#          force: true
+#          empty: true
+#          message: 'chore(ci/cd): Update version:${{ env.PACKAGE_VERSION }}'
+#          branch: ${{ github.ref_name }}
+#
   create-release:
-    needs: update-app-version
+#    needs: update-app-version
     permissions:
       contents: write
     runs-on: ubuntu-latest
