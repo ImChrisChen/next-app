@@ -30,6 +30,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.0.1
     version: registry.npmjs.org/autoprefixer@10.0.1(postcss@8.0.0)
+  daisyui:
+    specifier: ^4.4.2
+    version: registry.npmjs.org/daisyui@4.4.2(postcss@8.0.0)
   eslint:
     specifier: ^8
     version: registry.npmjs.org/eslint@8.0.0
@@ -946,6 +949,15 @@ packages:
       which: registry.npmjs.org/which@2.0.2
     dev: true
 
+  registry.npmjs.org/css-selector-tokenizer@0.8.0:
+    resolution: {integrity: sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/css-selector-tokenizer/-/css-selector-tokenizer-0.8.0.tgz}
+    name: css-selector-tokenizer
+    version: 0.8.0
+    dependencies:
+      cssesc: registry.npmjs.org/cssesc@3.0.0
+      fastparse: registry.npmjs.org/fastparse@1.1.2
+    dev: true
+
   registry.npmjs.org/cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz}
     name: cssesc
@@ -958,6 +970,28 @@ packages:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/csstype/-/csstype-3.1.2.tgz}
     name: csstype
     version: 3.1.2
+    dev: true
+
+  registry.npmjs.org/culori@3.3.0:
+    resolution: {integrity: sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/culori/-/culori-3.3.0.tgz}
+    name: culori
+    version: 3.3.0
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
+  registry.npmjs.org/daisyui@4.4.2(postcss@8.0.0):
+    resolution: {integrity: sha512-Ecg5loskj9dkaAnTSK5Xn5jb24TqDlQIg/NJ025jCkw2S/zw12btjvLgY2Sv5Ws1DFVoVBRs3XYXyojZG7zVnw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/daisyui/-/daisyui-4.4.2.tgz}
+    id: registry.npmjs.org/daisyui/4.4.2
+    name: daisyui
+    version: 4.4.2
+    engines: {node: '>=16.9.0'}
+    dependencies:
+      css-selector-tokenizer: registry.npmjs.org/css-selector-tokenizer@0.8.0
+      culori: registry.npmjs.org/culori@3.3.0
+      picocolors: registry.npmjs.org/picocolors@1.0.0
+      postcss-js: registry.npmjs.org/postcss-js@4.0.1(postcss@8.0.0)
+    transitivePeerDependencies:
+      - postcss
     dev: true
 
   registry.npmjs.org/damerau-levenshtein@1.0.8:
@@ -1574,6 +1608,12 @@ packages:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz}
     name: fast-levenshtein
     version: 2.0.6
+    dev: true
+
+  registry.npmjs.org/fastparse@1.1.2:
+    resolution: {integrity: sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/fastparse/-/fastparse-1.1.2.tgz}
+    name: fastparse
+    version: 1.1.2
     dev: true
 
   registry.npmjs.org/fastq@1.15.0:
